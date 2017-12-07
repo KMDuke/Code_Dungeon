@@ -1,0 +1,103 @@
+After creating your objects, the game needs to have a controller (or engine) to run. This is a recommended model of how to manage the game flow. (note if you have a different method that is ok as long as requirements are met.)
+
+ 
+
+The structure of your main should be like the following:
+
+int main()
+
+{
+
+       int choice = RUN;
+
+       Game_Engine game;
+
+       do
+
+       {
+
+              game.ShowTitle();//Shows title Screen enter to go to main menu;
+
+              choice=game.mainMenu();//shows menu at least 2 options; 1 play, 2 quit.
+
+              if (choice == RUN)
+
+                     game.run();//runs game
+
+              else if (choice == TEST)
+
+                     game.test();//runs debugger not displayed in main menu as choice
+
+ 
+
+       } while (choice != QUIT);
+
+      
+
+       cout << "Till next time" << endl;
+
+ 
+
+              return EXIT_SUCCESS;
+
+}
+
+ 
+
+This will run the game till I choose to quit. The bulk of the code will actually occur in the Game_Engine function run().
+
+Note that I have a separate function called test that will allow me to run test code. I have made the choice value for this 99 (const int TEST = 99). I did this so I can call the test without the user knowing the debug option.
+
+When the game starts, you should have a display similar to this:
+
+ 
+
+ display.png
+
+Playing the game will then run the actual game. Thus generate the player character set the level, health, beginning armor.
+
+A scenario should output; something like “An enemy comes into view ready to attack you. What do you do?” At this point a menu of options can show with options to attack, take potion (this is usually to heal), or run.
+
+Attack will commence player to run an attack function against the enemy. Something like player.Attack(enemy);
+
+After the player  attack, the program should check if enemy has health remaining. If not battle is over and rewards can be issued to player. Player should have option to equip and new weapons or armor (this can be done automatically if that’s simpler.) experience should be rewarded. And then player goes to next battle.
+
+ If enemy does not die (enemy.currentHealth!=0 ) then enemy should attack; enemy.Attack(player);
+
+If player health falls below 0 then player dies and the current game run should end. This should send game back to main menu.
+
+ 
+
+Requirements for Grade:
+
+These need to be present:
+
+Player Object Class
+
+Weapon Object class
+
+Armor Object Class
+
+Title Screen
+
+Test Function
+
+Used to test object creation and unit test functions
+
+Game Engine
+
+In game menu (or help display with control options)
+
+Battle logic
+
+Reward logic
+
+Header file structure
+
+These standards need to be met:
+
+Program runs (no syntax errors)
+
+Code is readable
+
+Logic is clean (clean of most logical errors)
