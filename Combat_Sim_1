@@ -1,0 +1,80 @@
+/*
+Kaleb's sick DnD game
+
+*/
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	int choice = RUN;
+
+	Game_Engine game;
+	do {
+		game.ShowTitle();
+	
+		choice = game.mainMenu();
+		if (choice == RUN)
+			game.run();
+		else if (choice == TEST)
+			game.test();
+
+	} while (choice != QUIT);
+
+	cout << "Till next time" << endl;
+
+	return EXIT_SUCCESS;
+
+	
+	Weapon sword;
+	Weapon Axe;
+	Weapon DaggerOfStriking;
+	double weaponDamage;
+	double weaponPower;
+
+	sword.setDamage(weaponDamage);
+	sword.setPower(weaponPower);
+
+	Axe.setDamage(weaponDamage);
+	Axe.setPower(weaponPower);
+
+	DaggerOfStriking.setDamage(weaponDamage);
+	DaggerOfStriking.setPower(weaponPower);
+.void mainmenu()
+{
+
+}
+void game
+void encounter()
+{
+	for()
+		cout << "An enemy comes into view ready to attack you. What do you do?" >> endl;
+	cin << choice;
+
+	if option == 1);
+	player.Attack(enemy);
+
+}
+class Weapon
+{
+private:
+	double damage;
+public:
+	void setDamage(double);
+	void setPower(double);
+
+};
+
+
+void Weapon::setDamage(double s)
+{
+	damage = s;
+}
+void Weapon::setPower(double p)
+{
+
+}
+
+void TEST()
